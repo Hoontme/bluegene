@@ -34,8 +34,9 @@ def get_all_url():
     url_head="http://www.lanjiyin.com.cn"
     request=requests.get(catlog_url,headers=headers)
     #<p class="fuMenu_fclass">生理学</p> 对应7本书,建立书籍的文件夹
+    
     #<p class="fuMenu_class">对应每一本书的章节，建立章节文件夹
-    #div class="div1_class">对应各个视频，<p是名字，<a href 为视频页的地址，建立各文件名字<p
+    #div class="div1_class">对应各个视频，<p是名字，<a href 为视频页的地址，建立各文件名字<p
     
 if __name__=="__main__":
     get_one_page()

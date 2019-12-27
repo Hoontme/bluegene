@@ -5,7 +5,7 @@ import os
 from bs4 import BeautifulSoup
 headers={"User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36",
           "Referer": "http://www.lanjiyin.com.cn/index.php/HomeDefault/user/login?app_type=westernmd",
-          "Cookie": "acw_tc=2760828215751634638196132e0aa0df4e4de03dbc1d3fc5ef4d0e2720eeb4; PHPSESSID=m4ajo1ja7o9h9o4i0gotttjlf6; Hm_lvt_d61eb67134ece75a30b917cd5c862147=1574586098,1575163280,1575203241,1575245357; _t99_chat=1; _t99_chat_mini=0; looyu_id=1511fdd78ddb6352a9ce96ccb4b12234_20003140%3A13; looyu_20003140=v%3A3eeaec371e3650f092ae1822ad2adf90%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m9107.looyu.com/monitor%2Cp0%3Ahttp%253A//www.lanjiyin.com.cn/index.php/HomeDefault/index/class_list%253Fcate_id%253D107%2526app_type%253Dwesternmd; Hm_lpvt_d61eb67134ece75a30b917cd5c862147=1575255969"
+          "Cookie": "acw_tc=2760828815774218161693940e72b395d798f1b9ecf71278599bdf13334563; PHPSESSID=ahdqb5ur5iffvqq7v9jsnu7l77; Hm_lvt_d61eb67134ece75a30b917cd5c862147=1577421615; looyu_id=982d4a66f3b7a6dcd517743369ee8e92_20003140%3A2; looyu_20003140=v%3A63fad4c6f225635266ca694f5ca971c2%2Cref%3A%2Cr%3A%2Cmon%3Ahttp%3A//m9107.looyu.com/monitor%2Cp0%3Ahttp%253A//www.lanjiyin.com.cn/index.php/HomeDefault/index/class_list%253Fcate_id%253D107%2526app_type%253Dwesternmd; Hm_lpvt_d61eb67134ece75a30b917cd5c862147=1577421637"
          }
 def get_one_page():
 
@@ -33,6 +33,8 @@ def get_all_url():
     catlog_url="http://www.lanjiyin.com.cn/index.php/HomeDefault/index/class_list?cate_id=107&app_type=westernmd"
     url_head="http://www.lanjiyin.com.cn"
     request=requests.get(catlog_url,headers=headers)
+    soup_catlog=BeautifulSoup(request.text,"html.parser")
+    
     #<p class="fuMenu_fclass">生理学</p> 对应7本书,建立书籍的文件夹
     
     #<p class="fuMenu_class">对应每一本书的章节，建立章节文件夹
